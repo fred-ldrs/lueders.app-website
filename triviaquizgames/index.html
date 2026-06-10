@@ -13,21 +13,100 @@
 <body>
     <header>
         <div class="container">
-            <h1>lueders.app</h1>
+            <a href="../index.html" class="logo-link"><h1>lueders.app</h1></a>
             <nav>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html" data-i18n="nav-home">Home</a></li>
                 </ul>
             </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="intro-section">
             <div class="container">
-                <h2>Multi Trivia App – Project Description</h2>
+                <h2 data-i18n="trivia-h2">Multi Trivia App – Project Description</h2>
             </div>
         </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="section-block">
+                    <h3 data-i18n="trivia-overview-h3">Overview</h3>
+                    <p data-i18n="trivia-overview-p1">The Multi Trivia App is a modular platform designed to power multiple trivia applications from a single, unified codebase. Each trivia app is implemented as a separate flavor with its own branding, question catalog, and domain, while all core logic, UI components, and infrastructure are shared.</p>
+                    <p data-i18n="trivia-overview-p2">This architecture enables fast development, minimal maintenance effort, and clean separation between product variants.</p>
+                </div>
+
+                <div class="section-block">
+                    <h3 data-i18n="trivia-features-h3">Key Features</h3>
+                    <ul>
+                        <li><strong>One codebase, many apps</strong><br>
+                        All trivia apps share the same technical foundation, reducing duplication and ensuring consistent quality.</li>
+                        
+                        <li><strong>Modular architecture</strong><br>
+                        Question catalogs, themes, and branding are fully interchangeable through a structured flavor system.</li>
+                        
+                        <li><strong>Scalable and maintainable</strong><br>
+                        New trivia topics can be added with minimal effort, without increasing complexity.</li>
+
+                        <li><strong>Shared infrastructure</strong><br>
+                        Localization, navigation, scoring logic, and API integration are centrally managed.</li>
+                        
+                        <li><strong>Consistent user experience</strong><br>
+                        Each app benefits from improvements made to the shared platform.</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h3 data-i18n="trivia-arch-h3">Architecture</h3>
+                    <p data-i18n="trivia-arch-p1">The platform follows a layered, modular structure:</p>
+                    <ul>
+                        <li><strong>Shared Core</strong><br>
+                        UI components, logic, localization, API layer, navigation.</li>
+                        
+                        <li><strong>App Flavors</strong><br>
+                        Individual variants such as Bitcoin Trivia or Boardgame Trivia, each with its own visual identity.</li>
+                        
+                        <li><strong>Question Catalogs</strong><br>
+                        Topic‑specific datasets that can be swapped or extended independently.</li>
+                    </ul>
+                    <p data-i18n="trivia-arch-p2">This approach ensures clean boundaries and long‑term maintainability.</p>
+                </div>
+
+                <div class="section-block">
+                    <h3 data-i18n="trivia-usecases-h3">Use Cases</h3>
+                    <ul>
+                        <li>Rapid creation of new trivia apps</li>
+                        <li>Thematic variants for different audiences</li>
+                        <li>Consistent updates across all apps</li>
+                        <li>Efficient long‑term maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="section-block">
+                    <h3 data-i18n="trivia-status-h3">Current Status</h3>
+                    <p data-i18n="trivia-status-p1">The platform is actively in development. The first app, Bitcoin Trivia, is already based on this architecture. Additional trivia topics are planned.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2026 lueders.app &nbsp;|&nbsp; <a href="https://legal.lueders.solutions/en/imprint/" target="_blank" rel="noopener noreferrer" data-i18n="footer-imprint">Imprint</a> &nbsp;|&nbsp; <a href="https://legal.lueders.solutions/en/privacy/web-luedersapp/" target="_blank" rel="noopener noreferrer" data-i18n="footer-privacy">Privacy</a> &nbsp;|&nbsp; hello@lueders.app</p>
+                <p class="footer-copyright">Powered by <a href="https://lueders.solutions" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">lueders.solutions</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/i18n.js"></script>
+</body>
+</html>
 
         <section class="content-section">
             <div class="container">

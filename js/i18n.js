@@ -104,7 +104,16 @@ var TRANSLATIONS = {
     'birds-intro-p2': 'Every app is represented by its own bird, symbolizing its character and purpose. Together, they form a lightweight, private, and expandable system that works without cloud services, accounts, or distractions.',
     'birds-list-h3': 'The Birds and Their Meaning',
     'birds-phil-h3': 'Philosophy of the Bird Ecosystem',
-    'birds-current-h3': 'Current Apps in the Bird Ecosystem'
+    'birds-current-h3': 'Current Apps in the Bird Ecosystem',
+    'philosophy-heading': 'Product Philosophy',
+    'phil-privacy-title': 'Privacy-First',
+    'phil-privacy-back': 'Privacy is a base assumption, not a feature.',
+    'phil-offline-title': 'Offline-First',
+    'phil-offline-back': "Apps must work, even when the connection doesn't.",
+    'phil-modular-title': 'Modular',
+    'phil-modular-back': 'Small, isolated apps with a shared codebase — testable, flexible, different flavors.',
+    'phil-simple-title': 'Simple First',
+    'phil-simple-back': 'Start simple to avoid AI overengineering — complexity grows with knowledge.'
   },
   de: {
     'nav-home': 'Start',
@@ -209,7 +218,16 @@ var TRANSLATIONS = {
     'birds-intro-p2': 'Jede App wird durch einen eigenen Vogel repräsentiert, der ihren Charakter und Zweck symbolisiert. Gemeinsam bilden sie ein leichtgewichtiges, privates und erweiterbares System, das ohne Cloud-Dienste, Accounts oder Ablenkungen funktioniert.',
     'birds-list-h3': 'Die Vögel und ihre Bedeutung',
     'birds-phil-h3': 'Philosophie des Bird Ecosystems',
-    'birds-current-h3': 'Aktuelle Apps im Bird Ecosystem'
+    'birds-current-h3': 'Aktuelle Apps im Bird Ecosystem',
+    'philosophy-heading': 'Produkt-Philosophie',
+    'phil-privacy-title': 'Privacy-First',
+    'phil-privacy-back': 'Datenschutz ist eine Grundannahme, kein Feature.',
+    'phil-offline-title': 'Offline-First',
+    'phil-offline-back': 'Apps müssen funktionieren, auch wenn die Verbindung es nicht tut.',
+    'phil-modular-title': 'Modular',
+    'phil-modular-back': 'Kleine, isolierte Apps mit gemeinsamer Codebasis — testbar, flexibel, unterschiedliche Flavors.',
+    'phil-simple-title': 'Simple First',
+    'phil-simple-back': 'Einfach starten, um AI-Overengineering zu vermeiden — Komplexität wächst erst mit dem eigenen Wissen.'
   },
   fr: {
     'nav-home': 'Accueil',
@@ -314,7 +332,16 @@ var TRANSLATIONS = {
     'birds-intro-p2': "Chaque app est représentée par son propre oiseau, symbolisant son caractère et son objectif. Ensemble, elles forment un système léger, privé et extensible qui fonctionne sans services cloud, comptes ou distractions.",
     'birds-list-h3': 'Les oiseaux et leur signification',
     'birds-phil-h3': "Philosophie de l'Écosystème Bird",
-    'birds-current-h3': "Apps actuelles dans l'Écosystème Bird"
+    'birds-current-h3': "Apps actuelles dans l'Écosystème Bird",
+    'philosophy-heading': 'Philosophie Produit',
+    'phil-privacy-title': 'Privacy-First',
+    'phil-privacy-back': 'La confidentialité est un postulat de base, pas une fonctionnalité.',
+    'phil-offline-title': 'Offline-First',
+    'phil-offline-back': 'Les apps doivent fonctionner, même quand la connexion ne le fait pas.',
+    'phil-modular-title': 'Modulaire',
+    'phil-modular-back': 'Petites apps isolées avec une base de code partagée — testables, flexibles, différentes déclinaisons.',
+    'phil-simple-title': 'Simple First',
+    'phil-simple-back': 'Commencer simple pour éviter la surcomplexité — la complexité grandit avec la connaissance.'
   }
 };
 
@@ -343,4 +370,9 @@ document.addEventListener('DOMContentLoaded', function () {
   try { saved = localStorage.getItem('lang') || 'en'; } catch (e) {}
   if (!TRANSLATIONS[saved]) saved = 'en';
   setLang(saved);
+  document.querySelectorAll('.flip-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      card.classList.toggle('is-flipped');
+    });
+  });
 });

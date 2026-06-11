@@ -371,8 +371,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!TRANSLATIONS[saved]) saved = 'en';
   setLang(saved);
   document.querySelectorAll('.flip-card').forEach(function (card) {
-    card.addEventListener('click', function () {
-      card.classList.toggle('is-flipped');
+    card.addEventListener('click', function (e) {
+      var isFlipped = card.classList.contains('is-flipped');
+      document.querySelectorAll('.flip-card').forEach(function (c) { c.classList.remove('is-flipped'); });
+      if (!isFlipped) { card.classList.add('is-flipped'); }
     });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.flip-card')) {
+      document.querySelectorAll('.flip-card').forEach(function (c) { c.classList.remove('is-flipped'); });
+    }
   });
 });

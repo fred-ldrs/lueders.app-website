@@ -279,7 +279,6 @@ nav ul li a:hover, nav ul li a.active {
     }
 }
 
-.flip-card:focus-within .flip-card-inner,
 .flip-card.is-flipped .flip-card-inner {
     transform: rotateY(180deg);
 }

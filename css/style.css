@@ -353,6 +353,7 @@ nav ul li a:hover, nav ul li a.active {
     gap: 10px;
     padding: 20px;
     border: 1px solid var(--card-border-accent);
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.06);
 }
 
 .philosophy-grid .flip-card-front {
@@ -812,7 +813,8 @@ footer {
     padding: 18px 20px;
     margin-bottom: 10px;
     background: linear-gradient(135deg, #f8fbff 0%, #ffffff 50%, #f5fdf9 100%);
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.06);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     position: relative;
 }
 
@@ -853,7 +855,8 @@ footer {
 
 .hub-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.08);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+    transform: translateY(-2px);
 }
 
 .hub-card-featured {

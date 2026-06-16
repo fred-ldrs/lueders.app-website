@@ -433,4 +433,39 @@ document.addEventListener('DOMContentLoaded', function () {
       row.style.opacity = '1'; row.style.transform = 'none';
     });
   }
+
+  // Cursor glow — smooth lerp follow
+  var glow = document.getElementById('cursor-glow');
+  if (glow && window.matchMedia('(hover: hover)').matches) {
+    var targetX = window.innerWidth / 2;
+    var targetY = window.innerHeight / 2;
+    var currentX = targetX;
+    var currentY = targetY;
+    var glowVisible = false;
+
+    document.addEventListener('mousemove', function (e) {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      if (!glowVisible) {
+        currentX = targetX; currentY = targetY;
+        glow.style.left = currentX + 'px';
+        glow.style.top  = currentY + 'px';
+        glow.style.opacity = '1';
+        glowVisible = true;
+      }
+    });
+
+    document.addEventListener('mouseleave', function () {
+      glow.style.opacity = '0';
+      glowVisible = false;
+    });
+
+    (function animate() {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+      glow.style.left = currentX + 'px';
+      glow.style.top  = currentY + 'px';
+      requestAnimationFrame(animate);
+    })();
+  }
 });

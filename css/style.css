@@ -176,7 +176,11 @@ nav ul li a:hover, nav ul li a.active {
 .hero-section {
     padding: 80px 0 64px;
     text-align: center;
-    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 35%, #ecfdf5 70%, #f0fdf4 100%);
+    background-color: #f0f6ff;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% 50%, transparent 60%, #f0f6ff 100%),
+        radial-gradient(circle, #93c5fd 1px, transparent 1px);
+    background-size: cover, 28px 28px;
     border-bottom: 1px solid var(--card-border);
 }
 
@@ -1031,6 +1035,25 @@ footer {
     color: var(--primary-color);
     border-color: var(--primary-color);
     background: var(--card-hover-bg);
+}
+
+/* ─── Cursor Glow ────────────────────────────────── */
+#cursor-glow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.04) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    will-change: left, top;
+}
+
+@media (hover: none) {
+    #cursor-glow { display: none; }
 }
 
 /* ─── Scroll Reveal ──────────────────────────────── */

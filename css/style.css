@@ -1054,8 +1054,17 @@ footer {
     }
 
     .contact-links {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .contact-btn {
+        padding: 12px 16px;
+    }
+
+    .contact-btn span {
+        display: none;
     }
 
     .hub-links {

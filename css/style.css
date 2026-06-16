@@ -13,6 +13,13 @@
     --footer-bg: #f1f5f9;
 }
 
+/* ─── Gradient Shift Animation ──────────────────── */
+@keyframes gradient-shift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +34,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text);
-    background-color: var(--bg);
+    background: linear-gradient(-45deg, #ffffff, #f0f4ff, #f8fafc, #fafbff);
+    background-size: 300% 300%;
+    animation: gradient-shift 22s ease infinite;
 }
 
 .container {
@@ -930,6 +939,13 @@ footer {
 }
 
 /* ─── Responsive ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+        background: var(--bg);
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 1.9rem;

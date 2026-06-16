@@ -217,11 +217,11 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .skills-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: linear-gradient(135deg, #eff6ff 0%, #f8faff 40%, #f0fdf4 100%);
+    border: 1px solid #c7d9f5;
     border-radius: 12px;
     padding: 32px 40px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 4px rgba(37, 99, 235, 0.07);
 }
 
 .skills-card h3 {
@@ -233,25 +233,63 @@ nav ul li a:hover, nav ul li a.active {
     letter-spacing: 0.1em;
 }
 
+/* ─── Skills List ───────────────────────────────── */
 .skills-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
 }
 
-.skills-list li {
+.skill-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: var(--text);
-    font-size: 0.95rem;
+    gap: 16px;
+    padding: 14px 12px;
+    border-radius: 10px;
+    transition: background 0.18s ease, padding-left 0.18s ease;
+    cursor: default;
+    list-style: none;
 }
 
-.skills-list li i {
-    color: var(--primary-color);
-    width: 18px;
-    text-align: center;
+.skill-row + .skill-row {
+    border-top: 1px solid var(--card-border);
+}
+
+.skill-row:hover { padding-left: 18px; }
+
+.skill-row-blue:hover   { background: #eff6ff; }
+.skill-row-purple:hover { background: #f5f3ff; }
+.skill-row-green:hover  { background: #f0fdf4; }
+.skill-row-amber:hover  { background: #fffbeb; }
+.skill-row-teal:hover   { background: #f0fdfa; }
+
+.skill-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+}
+
+.skill-icon-wrap i { font-size: 1.1rem; }
+
+.skill-icon-blue   { background: #dbeafe; }
+.skill-icon-blue i   { color: #2563eb; }
+.skill-icon-purple { background: #ede9fe; }
+.skill-icon-purple i { color: #7c3aed; }
+.skill-icon-green  { background: #d1fae5; }
+.skill-icon-green i  { color: #059669; }
+.skill-icon-amber  { background: #fef3c7; }
+.skill-icon-amber i  { color: #d97706; }
+.skill-icon-teal   { background: #ccfbf1; }
+.skill-icon-teal i   { color: #0d9488; }
+
+.skill-row span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
 }
 
 /* ─── Philosophy Section ────────────────────────── */
@@ -316,8 +354,14 @@ nav ul li a:hover, nav ul li a.active {
     border: 1px solid var(--card-border);
 }
 
-.flip-card-front {
-    background: var(--card-bg);
+.philosophy-grid .flip-card-front {
+    background: linear-gradient(170deg, #eff6ff 0%, #ffffff 55%);
+}
+
+@media (max-width: 540px) {
+    .philosophy-grid .flip-card-front {
+        background: linear-gradient(170deg, #eff6ff 0%, #ffffff 55%);
+    }
 }
 
 .flip-card-front i {
@@ -518,7 +562,7 @@ nav ul li a:hover, nav ul li a.active {
 /* ─── Contact Section ────────────────────────────── */
 .contact-section {
     padding: 64px 0;
-    background-color: var(--bg-subtle);
+    background: linear-gradient(135deg, #ecfdf5 0%, #eff6ff 50%, #dbeafe 100%);
     border-top: 1px solid var(--card-border);
     text-align: center;
 }
@@ -756,7 +800,7 @@ footer {
     border-radius: 12px;
     padding: 18px 20px;
     margin-bottom: 10px;
-    background: var(--card-bg);
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 50%, #f5fdf9 100%);
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
     position: relative;
 }
@@ -803,6 +847,7 @@ footer {
 
 .hub-card-featured {
     border-color: var(--primary-color);
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fbff 50%, #f0fdf4 100%);
     box-shadow: 0 2px 10px rgba(37, 99, 235, 0.1);
 }
 
@@ -946,6 +991,18 @@ footer {
     background: var(--card-hover-bg);
 }
 
+/* ─── Scroll Reveal ──────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ─── Responsive ─────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
     .hero-title {
@@ -955,6 +1012,11 @@ footer {
     }
     .btn-hero {
         animation: none;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
 

@@ -6,6 +6,7 @@
     --bg-subtle: #f8f9fa;
     --card-bg: #ffffff;
     --card-border: #e5e7eb;
+    --card-border-accent: #c7d9f5;
     --card-hover-bg: #eff6ff;
     --text: #111827;
     --text-muted: #6b7280;
@@ -351,11 +352,11 @@ nav ul li a:hover, nav ul li a.active {
     justify-content: center;
     gap: 10px;
     padding: 20px;
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--card-border-accent);
 }
 
 .philosophy-grid .flip-card-front {
-    background: linear-gradient(170deg, #eff6ff 0%, #ffffff 50%, #f0fdf4 100%);
+    background: #f8fbff;
 }
 
 .flip-card-front i {
@@ -790,7 +791,7 @@ footer {
 
 /* ─── Hub Cards (Projects) ──────────────────────── */
 .hub-card {
-    border: 1px solid var(--card-border);
+    border: 1px solid var(--card-border-accent);
     border-radius: 12px;
     padding: 18px 20px;
     margin-bottom: 10px;

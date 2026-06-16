@@ -362,6 +362,12 @@ nav ul li a:hover, nav ul li a.active {
 .flip-card-front i {
     font-size: 1.5rem;
     color: var(--primary-color);
+    transition: transform 0.25s ease;
+}
+
+.flip-card:hover .flip-card-front i,
+.flip-card.is-flipped .flip-card-front i {
+    transform: scale(1.2);
 }
 
 .flip-card-front span {
@@ -394,6 +400,16 @@ nav ul li a:hover, nav ul li a.active {
 }
 .tiles-section {
     padding: 40px 0 80px;
+}
+
+.projects-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
 }
 
 .project-group {

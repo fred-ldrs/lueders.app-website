@@ -13,6 +13,7 @@ var TRANSLATIONS = {
     'skill-3': 'Agile Mindset & iterative work',
     'skill-4': 'Privacy-First Design',
     'skill-5': 'Android & Web Apps',
+    'projects-heading': 'Projects',
     'group-general-title': 'Developer Profiles',
     'group-trivia-title': 'Trivia Quiz Platform — triviaquiz.games',
     'group-trivia-desc': 'Modular quiz platform · Web + Android',
@@ -127,7 +128,9 @@ var TRANSLATIONS = {
     'skill-3': 'Agiles Mindset & iteratives Arbeiten',
     'skill-4': 'Privacy-First Design',
     'skill-5': 'Android & Web-Apps',
+    'projects-heading': 'Projekte',
     'group-general-title': 'Entwicklerprofile',
+    'projects-heading': 'Projekte',
     'group-trivia-title': 'Trivia Quiz Plattform — triviaquiz.games',
     'group-trivia-desc': 'Modulare Quiz-Plattform · Web + Android',
     'group-birds-title': 'BIRDS.family — Micro-Apps für Eltern',
@@ -242,6 +245,7 @@ var TRANSLATIONS = {
     'skill-4': 'Conception Privacy-First',
     'skill-5': 'Apps Android & Web',
     'group-general-title': 'Profils développeur',
+    'projects-heading': 'Projets',
     'group-trivia-title': 'Plateforme Trivia Quiz — triviaquiz.games',
     'group-trivia-desc': 'Plateforme de quiz modulaire · Web + Android',
     'group-birds-title': 'BIRDS.family — Micro-Apps pour parents',
@@ -401,5 +405,32 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { observer.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // Skill rows stagger reveal
+  document.querySelectorAll('.skill-row').forEach(function (row, i) {
+    row.style.opacity = '0';
+    row.style.transform = 'translateX(-12px)';
+    row.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+    row.style.transitionDelay = (i * 0.08) + 's';
+  });
+  if ('IntersectionObserver' in window) {
+    var skillsObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-row').forEach(function (row) {
+            row.style.opacity = '1';
+            row.style.transform = 'translateX(0)';
+          });
+          skillsObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    var skillsCard = document.querySelector('.skills-card');
+    if (skillsCard) skillsObs.observe(skillsCard);
+  } else {
+    document.querySelectorAll('.skill-row').forEach(function (row) {
+      row.style.opacity = '1'; row.style.transform = 'none';
+    });
   }
 });

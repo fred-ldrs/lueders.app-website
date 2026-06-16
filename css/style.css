@@ -13,12 +13,15 @@
     --footer-bg: #f1f5f9;
 }
 
-/* ─── Grain / Noise Animation ───────────────────── */
-@keyframes grain {
-    0%   { transform: translate(0,    0  ); }
-    25%  { transform: translate(-4%,  3% ); }
-    50%  { transform: translate( 3%, -4% ); }
-    75%  { transform: translate(-3%,  4% ); }
+/* ─── Hero Animations ───────────────────────────── */
+@keyframes text-shimmer {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes btn-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45); }
+    60%      { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
 }
 
 * {
@@ -36,22 +39,6 @@ body {
     line-height: 1.6;
     color: var(--text);
     background-color: var(--bg);
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0.08;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 150px 150px;
-    animation: grain 0.35s steps(1) infinite;
 }
 
 .container {
@@ -165,17 +152,22 @@ nav ul li a:hover, nav ul li a.active {
 .hero-section {
     padding: 80px 0 64px;
     text-align: center;
-    background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg) 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 35%, #ecfdf5 70%, #f0fdf4 100%);
     border-bottom: 1px solid var(--card-border);
 }
 
 .hero-title {
     font-size: 2.6rem;
     font-weight: 800;
-    color: var(--text);
     line-height: 1.2;
     max-width: 720px;
     margin: 0 auto 16px;
+    background: linear-gradient(90deg, #111827 0%, #2563eb 40%, #059669 70%, #111827 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: text-shimmer 6s linear infinite;
 }
 
 .hero-sub {
@@ -193,6 +185,7 @@ nav ul li a:hover, nav ul li a.active {
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.2s ease;
+    animation: btn-pulse 2.8s ease-in-out infinite;
 }
 
 .btn-hero:hover {
@@ -955,7 +948,12 @@ footer {
 
 /* ─── Responsive ─────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-    body::before {
+    .hero-title {
+        animation: none;
+        background: none;
+        -webkit-text-fill-color: var(--text);
+    }
+    .btn-hero {
         animation: none;
     }
 }

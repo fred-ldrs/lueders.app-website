@@ -355,13 +355,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .philosophy-grid .flip-card-front {
-    background: linear-gradient(170deg, #eff6ff 0%, #ffffff 55%);
-}
-
-@media (max-width: 540px) {
-    .philosophy-grid .flip-card-front {
-        background: linear-gradient(170deg, #eff6ff 0%, #ffffff 55%);
-    }
+    background: linear-gradient(170deg, #eff6ff 0%, #ffffff 50%, #f0fdf4 100%);
 }
 
 .flip-card-front i {

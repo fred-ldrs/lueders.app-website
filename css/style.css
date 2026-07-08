@@ -976,6 +976,10 @@ footer {
     color: #3730a3;
 }
 
+.quiz-hl {
+    color: var(--text-muted);
+}
+
 .hub-links {
     display: flex;
     flex-wrap: wrap;

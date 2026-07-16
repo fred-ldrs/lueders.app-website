@@ -19,6 +19,7 @@ var TRANSLATIONS = {
     'group-trivia-desc': 'Knowledge & fun quizzes · Web + Android',
     'group-birds-title': 'Micro-Apps for Parents — BIRDS.family',
     'group-birds-desc': 'Apps for parents · Web + Android',
+    'pw-label': 'Product World',
     'group-snap-title': 'Snap it. Keep it. — snapitkeepit.com',
     'group-snap-desc': 'Memory app · Rebranding in progress',
     'group-npuppy-title': 'npuppy™ — NOSTR Address Service',
@@ -141,6 +142,7 @@ var TRANSLATIONS = {
     'group-trivia-desc': 'Wissens- & Spaß-Quizzes · Web + Android',
     'group-birds-title': 'Micro-Apps für Eltern — BIRDS.family',
     'group-birds-desc': 'Apps für Eltern · Web + Android',
+    'pw-label': 'Produktwelt',
     'group-snap-title': 'Snap it. Keep it. — snapitkeepit.com',
     'group-snap-desc': 'Erinnerungs-App · Rebranding in Arbeit',
     'group-npuppy-title': 'npuppy™ — NOSTR-Adressdienst',
@@ -262,6 +264,7 @@ var TRANSLATIONS = {
     'group-trivia-desc': 'Quiz de culture & de fun · Web + Android',
     'group-birds-title': 'Micro-Apps pour parents — BIRDS.family',
     'group-birds-desc': 'Apps pour parents · Web + Android',
+    'pw-label': 'Univers Produit',
     'group-snap-title': 'Snap it. Keep it. — snapitkeepit.com',
     'group-snap-desc': 'App mémoire · Rebranding en cours',
     'group-npuppy-title': 'npuppy™ — Service d\'adresse NOSTR',
@@ -406,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Scroll reveal
-  var revealEls = document.querySelectorAll('.about-section, .skills-section, .philosophy-section, .hub-card, .hub-group-divider, .contact-section');
+  var revealEls = document.querySelectorAll('.about-section, .skills-section, .philosophy-section, .hub-card, .hub-produktwelt, .hub-group-divider, .contact-section');
   revealEls.forEach(function (el) { el.classList.add('reveal'); });
   document.querySelectorAll('.hub-card').forEach(function (card, i) {
     card.style.transitionDelay = (i * 0.07) + 's';

@@ -980,6 +980,128 @@ footer {
     color: var(--text-muted);
 }
 
+/* ─── Produktwelt (Product World Groups) ─────────── */
+.hub-produktwelt {
+    border: 1px solid var(--primary-color);
+    border-radius: 14px;
+    padding: 0;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fbff 50%, #f0fdf4 100%);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hub-produktwelt:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+}
+
+.hub-produktwelt-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--card-border-accent);
+}
+
+.hub-produktwelt-header .hub-icon {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.hub-produktwelt-header .hub-icon i {
+    color: #ffffff;
+}
+
+.hub-produktwelt-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-color);
+    margin-bottom: 1px;
+}
+
+.hub-produktwelt-children {
+    padding: 10px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hub-subcard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: #ffffff;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.hub-subcard:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+    background: var(--card-hover-bg);
+    color: var(--text);
+}
+
+.hub-subcard-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+}
+
+.hub-subcard-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hub-subcard-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.hub-subcard-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin-top: 1px;
+}
+
+.hub-subcard-url {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    margin-top: 1px;
+}
+
+.hub-subcard-arrow {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.hub-subcard:hover .hub-subcard-arrow {
+    color: var(--primary-color);
+}
+
 .hub-links {
     display: flex;
     flex-wrap: wrap;

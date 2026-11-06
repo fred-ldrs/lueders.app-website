@@ -19,7 +19,25 @@
       { "source": "/go/shop4tesla", "destination": "https://www.shop4tesla.com/frederikluders", "type": 302 },
       { "source": "/go/shop4tesla/", "destination": "https://www.shop4tesla.com/frederikluders", "type": 302 },
       { "source": "/go/t-lectric", "destination": "https://t-lectric.de/?ref=frederikluders", "type": 302 },
-      { "source": "/go/t-lectric/", "destination": "https://t-lectric.de/?ref=frederikluders", "type": 302 }
+      { "source": "/go/t-lectric/", "destination": "https://t-lectric.de/?ref=frederikluders", "type": 302 },
+      { "source": "/go/bison", "destination": "https://ldrs.uk/bison-bt", "type": 302 },
+      { "source": "/go/bison/", "destination": "https://ldrs.uk/bison-bt", "type": 302 },
+      { "source": "/go/bitvavo", "destination": "https://ldrs.uk/bitvavo-bt", "type": 302 },
+      { "source": "/go/bitvavo/", "destination": "https://ldrs.uk/bitvavo-bt", "type": 302 },
+      { "source": "/go/bitbox", "destination": "https://ldrs.uk/bitbox-bt", "type": 302 },
+      { "source": "/go/bitbox/", "destination": "https://ldrs.uk/bitbox-bt", "type": 302 },
+      { "source": "/go/jade", "destination": "https://ldrs.uk/jade-bt", "type": 302 },
+      { "source": "/go/jade/", "destination": "https://ldrs.uk/jade-bt", "type": 302 },
+      { "source": "/go/ledger", "destination": "https://ldrs.uk/ledger-bt", "type": 302 },
+      { "source": "/go/ledger/", "destination": "https://ldrs.uk/ledger-bt", "type": 302 },
+      { "source": "/go/cointracking", "destination": "https://ldrs.uk/ct-bt", "type": 302 },
+      { "source": "/go/cointracking/", "destination": "https://ldrs.uk/ct-bt", "type": 302 },
+      { "source": "/go/blockpit", "destination": "https://ldrs.uk/blockpit-bt", "type": 302 },
+      { "source": "/go/blockpit/", "destination": "https://ldrs.uk/blockpit-bt", "type": 302 },
+      { "source": "/go/donate-bitcoin", "destination": "https://checkout.opennode.com/p/ffd4467e-e41c-4b6e-9ceb-4bd394254fe8", "type": 302 },
+      { "source": "/go/donate-bitcoin/", "destination": "https://checkout.opennode.com/p/ffd4467e-e41c-4b6e-9ceb-4bd394254fe8", "type": 302 },
+      { "source": "/go/donate-paypal", "destination": "https://PayPal.Me/luederssolutions", "type": 302 },
+      { "source": "/go/donate-paypal/", "destination": "https://PayPal.Me/luederssolutions", "type": 302 }
     ],
     "headers": [
       {

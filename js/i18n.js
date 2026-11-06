@@ -2,6 +2,15 @@
 
 var TRANSLATIONS = {
   en: {
+    'links-bitcoin-title': 'Bitcoin Partners',
+    'links-bitcoin-desc': 'Exchanges, hardware wallets and tax tools.',
+    'links-exchange': 'Buy Bitcoin · Exchange',
+    'links-wallet': 'Store Bitcoin · Hardware wallet',
+    'links-tax': 'Crypto tax reports and portfolio tracking',
+    'links-bitcoin-disclosure': 'These affiliate and referral links support Bitcoin Trivia. Partner conditions apply. For now, the redirects continue via ldrs.uk (Short.io) before reaching the partner.',
+    'links-donate-title': 'Support Bitcoin Trivia',
+    'links-donate-desc': 'Voluntary donations via OpenNode or PayPal.',
+    'links-donate': 'Donate',
     'links-page-title': 'Partner Links & Recommendations | lueders.app',
     'links-description': 'Partner links, affiliate offers and recommendations from lueders.app.',
     'links-heading': 'Partner Links & Recommendations',
@@ -145,6 +154,15 @@ var TRANSLATIONS = {
     'phil-simple-back': 'Start simple to avoid AI overengineering — complexity grows with knowledge.'
   },
   de: {
+    'links-bitcoin-title': 'Bitcoin-Partner',
+    'links-bitcoin-desc': 'Börsen, Hardware-Wallets und Steuer-Tools.',
+    'links-exchange': 'Bitcoin kaufen · Börse',
+    'links-wallet': 'Bitcoin aufbewahren · Hardware-Wallet',
+    'links-tax': 'Krypto-Steuerberichte und Portfolio-Verfolgung',
+    'links-bitcoin-disclosure': 'Diese Affiliate- und Empfehlungslinks unterstützen Bitcoin Trivia. Es gelten die Bedingungen des Partners. Die Weiterleitungen führen vorerst weiterhin über ldrs.uk (Short.io) zum Partner.',
+    'links-donate-title': 'Bitcoin Trivia unterstützen',
+    'links-donate-desc': 'Freiwillige Spenden über OpenNode oder PayPal.',
+    'links-donate': 'Spenden',
     'links-page-title': 'Partnerlinks & Empfehlungen | lueders.app',
     'links-description': 'Partnerlinks, Affiliate-Angebote und Empfehlungen von lueders.app.',
     'links-heading': 'Partnerlinks & Empfehlungen',
@@ -289,6 +307,15 @@ var TRANSLATIONS = {
     'phil-simple-back': 'Einfach starten, um AI-Overengineering zu vermeiden — Komplexität wächst erst mit dem eigenen Wissen.'
   },
   fr: {
+    'links-bitcoin-title': 'Partenaires Bitcoin',
+    'links-bitcoin-desc': 'Plateformes d’échange, portefeuilles matériels et outils fiscaux.',
+    'links-exchange': 'Acheter du Bitcoin · Plateforme d’échange',
+    'links-wallet': 'Conserver du Bitcoin · Portefeuille matériel',
+    'links-tax': 'Rapports fiscaux crypto et suivi de portefeuille',
+    'links-bitcoin-disclosure': 'Ces liens affiliés et de parrainage soutiennent Bitcoin Trivia. Les conditions du partenaire s’appliquent. Pour le moment, les redirections passent encore par ldrs.uk (Short.io) avant d’atteindre le partenaire.',
+    'links-donate-title': 'Soutenir Bitcoin Trivia',
+    'links-donate-desc': 'Dons volontaires via OpenNode ou PayPal.',
+    'links-donate': 'Faire un don',
     'links-page-title': 'Liens partenaires & recommandations | lueders.app',
     'links-description': 'Liens partenaires, offres affiliées et recommandations de lueders.app.',
     'links-heading': 'Liens partenaires & recommandations',

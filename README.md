@@ -29,6 +29,11 @@ Partnerlinks werden auf `/links/` gesammelt. Externe Ziele liegen zentral in `fi
 
 ## Firebase Hosting
 
+Die Bitcoin-Trivia-Links von OCTOQUIZPUS sind ebenfalls in der Sammlung enthalten.
+Die `/go/`-Routen für BISON, Bitvavo, BitBox, Jade, Ledger, CoinTracking und Blockpit
+behalten vorerst ihre bisherigen ldrs.uk-Ziele. Spenden laufen über
+`/go/donate-bitcoin/` (OpenNode) und `/go/donate-paypal/` (PayPal).
+
 Die Linksammlung nutzt dieselben DE/EN/FR-Übersetzungen, Sprachschalter und Produktwelt-Kacheln wie die Hauptseite. `/links/#de`, `/links/#en` und `/links/#fr` wählen die Sprache direkt; ohne Sprach-Hash gilt die gespeicherte Sprache bzw. Englisch. Andere Anker (z. B. `#projects`) behalten ihre Navigationsfunktion.
 
 - Projekt: `luedersapp`

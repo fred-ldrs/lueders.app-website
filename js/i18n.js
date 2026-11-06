@@ -2,6 +2,17 @@
 
 var TRANSLATIONS = {
   en: {
+    'links-page-title': 'Partner Links & Recommendations | lueders.app',
+    'links-description': 'Partner links, affiliate offers and recommendations from lueders.app.',
+    'links-heading': 'Partner Links & Recommendations',
+    'links-sub': 'Selected offers and recommendations from my projects.',
+    'links-ad-label': 'Advertisement · Affiliate links',
+    'links-group-title': 'eAutoRadar · Tesla Accessories',
+    'links-group-desc': 'Accessories for Tesla Model 3 and Model Y.',
+    'links-coupon': '10% discount with code:',
+    'links-disclosure': 'If you buy through these affiliate links, eAutoRadar may receive a commission. Your price is not affected. Discounts and conditions are determined by each shop.',
+    'links-source': 'More details on eAutoRadar · Accessories',
+    'links-home': 'Back to lueders.app',
     'nav-home': 'Home',
     'hero-h1': 'I build digital products, tools & ecosystems.',
     'hero-sub': 'Product Builder · AI-assisted Development · Agile Mindset · Privacy-First',
@@ -134,6 +145,17 @@ var TRANSLATIONS = {
     'phil-simple-back': 'Start simple to avoid AI overengineering — complexity grows with knowledge.'
   },
   de: {
+    'links-page-title': 'Partnerlinks & Empfehlungen | lueders.app',
+    'links-description': 'Partnerlinks, Affiliate-Angebote und Empfehlungen von lueders.app.',
+    'links-heading': 'Partnerlinks & Empfehlungen',
+    'links-sub': 'Ausgewählte Angebote und Empfehlungen aus meinen Projekten.',
+    'links-ad-label': 'Anzeige · Affiliate-Links',
+    'links-group-title': 'eAutoRadar · Tesla-Zubehör',
+    'links-group-desc': 'Zubehör für Tesla Model 3 und Model Y.',
+    'links-coupon': '10 % Rabatt mit dem Code:',
+    'links-disclosure': 'Wenn du über diese Affiliate-Links einkaufst, erhält eAutoRadar möglicherweise eine Provision. Für dich ändert sich der Preis dadurch nicht. Rabatt und Bedingungen legt der jeweilige Shop fest.',
+    'links-source': 'Mehr Informationen auf eAutoRadar · Zubehör',
+    'links-home': 'Zurück zu lueders.app',
     'nav-home': 'Start',
     'hero-h1': 'Ich baue digitale Produkte, Tools & Ökosysteme.',
     'hero-sub': 'Product Builder · KI-unterstützte Entwicklung · Agiles Mindset · Privacy-First',
@@ -267,6 +289,17 @@ var TRANSLATIONS = {
     'phil-simple-back': 'Einfach starten, um AI-Overengineering zu vermeiden — Komplexität wächst erst mit dem eigenen Wissen.'
   },
   fr: {
+    'links-page-title': 'Liens partenaires & recommandations | lueders.app',
+    'links-description': 'Liens partenaires, offres affiliées et recommandations de lueders.app.',
+    'links-heading': 'Liens partenaires & recommandations',
+    'links-sub': 'Une sélection d’offres et de recommandations issues de mes projets.',
+    'links-ad-label': 'Publicité · Liens affiliés',
+    'links-group-title': 'eAutoRadar · Accessoires Tesla',
+    'links-group-desc': 'Accessoires pour Tesla Model 3 et Model Y.',
+    'links-coupon': '10 % de réduction avec le code :',
+    'links-disclosure': 'Si vous achetez via ces liens affiliés, eAutoRadar peut recevoir une commission. Votre prix reste inchangé. Les réductions et conditions sont fixées par chaque boutique.',
+    'links-source': 'Plus d’informations sur eAutoRadar · Accessoires',
+    'links-home': 'Retour à lueders.app',
     'nav-home': 'Accueil',
     'hero-h1': 'Je construis des produits numériques, outils & écosystèmes.',
     'hero-sub': 'Product Builder · Développement assisté par IA · Mindset Agile · Privacy-First',
@@ -412,19 +445,46 @@ function setLang(lang) {
   });
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    btn.setAttribute('aria-pressed', String(btn.getAttribute('data-lang') === lang));
   });
+  document.querySelectorAll('[data-i18n-content]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n-content');
+    if (TRANSLATIONS[lang][key] !== undefined) {
+      el.setAttribute('content', TRANSLATIONS[lang][key]);
+    }
+  });
+  var legalPaths = {
+    de: { imprint: '/de/impressum/', privacy: '/de/datenschutz/web-luedersapp/' },
+    en: { imprint: '/en/imprint/', privacy: '/en/privacy/web-luedersapp/' },
+    fr: { imprint: '/fr/mentions-legales/', privacy: '/fr/politique-de-confidentialite/web-luedersapp/' }
+  };
+  document.querySelectorAll('[data-legal-page]').forEach(function (el) {
+    el.href = 'https://legal.lueders.solutions' + legalPaths[lang][el.getAttribute('data-legal-page')];
+  });
+}
+
+function getHashLang() {
+  var lang = window.location.hash.slice(1);
+  return Object.prototype.hasOwnProperty.call(TRANSLATIONS, lang) ? lang : null;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       setLang(btn.getAttribute('data-lang'));
+      if (getHashLang()) {
+        window.history.replaceState(null, '', '#' + btn.getAttribute('data-lang'));
+      }
     });
   });
   var saved = 'en';
   try { saved = localStorage.getItem('lang') || 'en'; } catch (e) {}
   if (!TRANSLATIONS[saved]) saved = 'en';
-  setLang(saved);
+  setLang(getHashLang() || saved);
+  window.addEventListener('hashchange', function () {
+    var lang = getHashLang();
+    if (lang) setLang(lang);
+  });
   document.querySelectorAll('.flip-card').forEach(function (card) {
     card.addEventListener('click', function (e) {
       var isFlipped = card.classList.contains('is-flipped');

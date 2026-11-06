@@ -14,12 +14,30 @@ Diese Website präsentiert meine Web-Applikationen und interaktiven Projekte:
 ```
 lueders.app/
 ├── index.html          # Hauptseite mit App-Übersicht
+├── links/
+│   └── index.html      # Partnerlinks und Empfehlungen
+├── firebase.json       # Hosting und zentrale /go/<partner>/-Weiterleitungen
+├── .firebaserc         # Firebase-Projekt luedersapp
 ├── impressum.html      # Impressum & Datenschutz
 ├── css/
 │   └── style.css      # Styling
 └── assets/
     └── images/        # Bilder und Icons
 ```
+
+Partnerlinks werden auf `/links/` gesammelt. Externe Ziele liegen zentral in `firebase.json`: `/go/shop4tesla/` und `/go/t-lectric/` leiten per HTTP 302 zum Partner weiter (auch ohne abschließenden Slash). Bei einem Zielwechsel beide Regeln für den jeweiligen Partner anpassen. `/go/` führt zur Sammlung. 302 statt 301 erlaubt spätere Zielwechsel ohne dauerhaft gecachte Weiterleitung.
+
+## Firebase Hosting
+
+Die Linksammlung nutzt dieselben DE/EN/FR-Übersetzungen, Sprachschalter und Produktwelt-Kacheln wie die Hauptseite. `/links/#de`, `/links/#en` und `/links/#fr` wählen die Sprache direkt; ohne Sprach-Hash gilt die gespeicherte Sprache bzw. Englisch. Andere Anker (z. B. `#projects`) behalten ihre Navigationsfunktion.
+
+- Projekt: `luedersapp`
+- Hosting-Adresse: https://luedersapp.web.app/
+- Veröffentlichung: `firebase deploy --only hosting --project luedersapp`
+- Die Website bleibt statisch; Backend, Datenbank und Firebase-Web-SDK sind nicht nötig.
+- Veröffentlicht wird das Repository-Verzeichnis ohne Git-Dateien, Firebase-Konfiguration, README, CNAME und Debug-Logs.
+
+Für den Domainwechsel in der [Firebase-Konsole](https://console.firebase.google.com/project/luedersapp/hosting) `lueders.app` als benutzerdefinierte Domain hinzufügen und die dort angezeigten DNS-Einträge beim Domainanbieter setzen. Erst nach erfolgreicher Domainprüfung und SSL-Bereitstellung GitHub Pages abschalten. Die `/go/`-Weiterleitungen funktionieren auf der eigenen Domain erst, wenn diese von Firebase Hosting bedient wird.
 
 ## Design
 

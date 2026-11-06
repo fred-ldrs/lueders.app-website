@@ -1,0 +1,34 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "README.md",
+      "CNAME",
+      ".git/**",
+      ".firebase/**",
+      "**/.*",
+      "**/node_modules/**",
+      "**/*debug*.log"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "redirects": [
+      { "source": "/go", "destination": "/links/", "type": 302 },
+      { "source": "/go/", "destination": "/links/", "type": 302 },
+      { "source": "/go/shop4tesla", "destination": "https://www.shop4tesla.com/frederikluders", "type": 302 },
+      { "source": "/go/shop4tesla/", "destination": "https://www.shop4tesla.com/frederikluders", "type": 302 },
+      { "source": "/go/t-lectric", "destination": "https://t-lectric.de/?ref=frederikluders", "type": 302 },
+      { "source": "/go/t-lectric/", "destination": "https://t-lectric.de/?ref=frederikluders", "type": 302 }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-store" },
+          { "key": "Referrer-Policy", "value": "no-referrer" }
+        ]
+      }
+    ]
+  }
+}
